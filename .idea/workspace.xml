@@ -2,34 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="090d6a87-6cf1-40e6-910c-9f42d4a21dde" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Edwin_Magabe.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AUTHORS" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/analysis_options.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/d_simple_parser.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/d_simple_parser_example.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/context.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/core.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/parser.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/result.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/d_simple_parser.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/parsers/all_input_parser.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/parsers/any_character_parser.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/parsers/char_parsers.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/parsers/parsers.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/parsers/pattern_parsers.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/parsers/space_parsers.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/parsers/string_parser.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/d_simple_parser_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,41 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pubspec.yaml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+      <file leaf-file-name="any_character_parser.dart" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/parsers/any_character_parser.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="158" selection-start-line="1" selection-start-column="158" selection-end-line="1" selection-end-column="158" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parser.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/core/parser.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="188" column="3" lean-forward="true" selection-start-line="188" selection-start-column="3" selection-end-line="188" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#11777#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="d_simple_parser_example.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/d_simple_parser_example.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="11" column="16" selection-start-line="9" selection-end-line="32" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="space_parsers.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/parsers/space_parsers.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+            <state relative-caret-position="340">
+              <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
               <folding>
                 <element signature="e#116#143#0" expanded="true" />
               </folding>
@@ -83,23 +27,96 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor>
-                <caret column="143" selection-start-column="143" selection-end-column="143" />
-              </first_editor>
-              <second_editor />
+      <file leaf-file-name="char_parsers.dart" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/parsers/char_parsers.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-714">
+              <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+              <folding>
+                <element signature="e#116#146#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="any_character_parser.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/parsers/any_character_parser.dart">
+      <file leaf-file-name="pubspec.yaml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pubspec.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-282">
-              <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+            <state relative-caret-position="153">
+              <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parsers.dart" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/parsers/parsers.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#301#0" expanded="true" />
+                <element signature="e#116#143#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pattern_parsers.dart" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/parsers/pattern_parsers.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="space_parsers.dart" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/parsers/space_parsers.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+              <folding>
+                <element signature="e#116#143#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="string_parser.dart" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/parsers/string_parser.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="d_simple_parser.dart" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/d_simple_parser.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+              <folding>
+                <element signature="e#136#160#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="d_simple_parser_test.dart" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/d_simple_parser_test.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parser.dart" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/core/parser.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -113,16 +130,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/lib/parsers/all_input_parser.dart" />
-        <option value="$PROJECT_DIR$/lib/parsers/any_character_parser.dart" />
         <option value="$PROJECT_DIR$/lib/parsers/char_parsers.dart" />
         <option value="$PROJECT_DIR$/lib/parsers/pattern_parsers.dart" />
         <option value="$PROJECT_DIR$/lib/parsers/space_parsers.dart" />
         <option value="$PROJECT_DIR$/lib/parsers/string_parser.dart" />
         <option value="$PROJECT_DIR$/lib/d_simple_parser.dart" />
-        <option value="$PROJECT_DIR$/test/d_simple_parser_test.dart" />
-        <option value="$PROJECT_DIR$/lib/core/parser.dart" />
         <option value="$PROJECT_DIR$/example/d_simple_parser_example.dart" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/test/d_simple_parser_test.dart" />
+        <option value="$PROJECT_DIR$/lib/core/parser.dart" />
+        <option value="$PROJECT_DIR$/lib/parsers/any_character_parser.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
       </list>
     </option>
@@ -269,6 +286,28 @@
       <option name="presentableId" value="Default" />
       <updated>1580796130459</updated>
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1580801698073</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580801698073</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added homepage">
+      <created>1580801824318</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1580801824318</updated>
+    </task>
+    <task id="LOCAL-00003" summary="formatted">
+      <created>1580802050296</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1580802050296</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -283,8 +322,8 @@
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="bottom" id="Dart Analysis" weight="0.32815534" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Dart Analysis" weight="0.32715008" />
+      <window_info anchor="bottom" id="Version Control" weight="0.32715008" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32715008" />
       <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32715008" />
       <window_info id="Capture Tool" />
@@ -307,12 +346,48 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <MESSAGE value="added homepage" />
+    <MESSAGE value="formatted" />
+    <option name="LAST_COMMIT_MESSAGE" value="formatted" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pubspec.lock">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="143" selection-start-column="143" selection-end-column="143" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/d_simple_parser_example.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/core/context.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/core/core.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -323,24 +398,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/parsers/all_input_parser.dart">
+    <entry file="file://$PROJECT_DIR$/lib/core/result.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#0#415#0" expanded="true" />
-            <element signature="e#116#160#0" expanded="true" />
-          </folding>
+        <state>
+          <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/parsers/char_parsers.dart">
+    <entry file="file://$PROJECT_DIR$/lib/parsers/all_input_parser.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#1916#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -355,102 +423,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LICENSE">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/d_simple_parser.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#200#0" expanded="true" />
-            <element signature="e#26#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.lock">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/d_simple_parser_test.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4512">
-          <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#11215#0" expanded="true" />
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/parsers/pattern_parsers.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#841#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/parsers/string_parser.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="4" />
-          <folding>
-            <element signature="e#0#1445#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/core/parser.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="188" column="3" lean-forward="true" selection-start-line="188" selection-start-column="3" selection-end-line="188" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#11777#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/parsers/any_character_parser.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-282">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        <state relative-caret-position="187">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/parsers/space_parsers.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        <state relative-caret-position="136">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="e#116#143#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/d_simple_parser_example.dart">
+    <entry file="file://$PROJECT_DIR$/lib/parsers/string_parser.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="11" column="16" selection-start-line="9" selection-end-line="32" selection-end-column="43" />
+        <state relative-caret-position="289">
+          <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="143" selection-start-column="143" selection-end-column="143" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/lib/d_simple_parser.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding>
+            <element signature="e#136#160#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/d_simple_parser_test.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/core/parser.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/parsers/any_character_parser.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+          <folding>
+            <element signature="e#116#143#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/parsers/char_parsers.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-714">
+          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding>
+            <element signature="e#116#146#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="158" selection-start-line="1" selection-start-column="158" selection-end-line="1" selection-end-column="158" />
+        <state relative-caret-position="153">
+          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
