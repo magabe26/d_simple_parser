@@ -1,7 +1,7 @@
 name: d_simple_parser
 description: A simple and easy to use text parsing dart library,d_simple_parser comes with elegant parsers that you can use to build complex and more elegant commparsers.
 version: 1.0.0
-homepage: https://www.example.com
+homepage: https://github.com/magabe26/d_simple_parser
 author: Edwin Magabe <edyma50@yahoo.com>
 
 environment:
