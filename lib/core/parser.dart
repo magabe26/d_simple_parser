@@ -191,7 +191,6 @@ abstract class Parser {
   bool hasMatch(String input, [int start = 0]) {
     return firstMatch(input, start).isSuccess;
   }
-
 }
 
 class SeqParser extends Parser {

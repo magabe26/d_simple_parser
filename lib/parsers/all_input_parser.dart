@@ -9,4 +9,5 @@ import 'parsers.dart';
 ///Parses the entire input
 /// For example:
 ///   allInput().firstStringMatch('I am Awesome!') returns 'I am Awesome!'
-Parser allInput() => firstChar().seq(any(end: lastChar()).star().seq(lastChar()));
+Parser allInput() =>
+    firstChar().seq(any(end: lastChar()).star().seq(lastChar()));
