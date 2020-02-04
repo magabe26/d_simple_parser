@@ -32,5 +32,4 @@ void main() {
 
  print(anyElement.allStringMatches(input));
 
-
 }

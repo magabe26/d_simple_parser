@@ -20,10 +20,18 @@ void main() {
     print(pattern('a-zA-Z').plus().seq(char(' ').plus()).seq(pattern('0-9').plus()).firstStringMatch('Yes!, I igree year 2019 was not the best year for me.')); // year 2019
 
   
+    //The almighty any(end,except) function
     var awesomeParser = string('awesome',caseSensitive: false).seq(char('!'));
     print(any(end: awesomeParser).firstStringMatch('I am Awesome!')); // I
     print(any(end: awesomeParser).plus().firstStringMatch('I am Awesome!')); // I am 
     print(any(end: awesomeParser).plus().seq(awesomeParser).firstStringMatch('I am Awesome!')); // I am Awesome!
+
+    final startTagParser = char('<').seq(any(end: char('>'),except: '<>').plus()).seq(char('>'));
+    final endTagParser = char('<').seq(word().plus()).seq(char('/')).seq(spaceOptional()).seq(char('>'));
+    final elementParser = startTagParser.seq(any(end: endTagParser).plus()).seq(endTagParser);
+    print(startTagParser.firstStringMatch('<i>42<i/>')); // <i>
+    print(endTagParser.firstStringMatch('<i>42<i/>')); // <i/>
+    print(elementParser.firstStringMatch('<i>42<i/>')); // <i>42<i/>
 
   
     print(allInput().firstStringMatch('Hello world!')); // Hello world!
@@ -44,7 +52,7 @@ void main() {
    //repeat method
    print(char('a').repeat(min:2,max:3).allStringMatches('aaaaaa aa aaa aa aaaaaa aaa a aa')); // [aaa, aaa, aa, aaa, aa, aaa, aaa, aaa, aa]
 
-   //Lastly, A parser that parses most of HTML an XML elements
+   //Lastly, A parser that parses most of HTML and XML elements
 
   final input = '''<k>
            <tag attr1="attribute1"> Text </tag>
