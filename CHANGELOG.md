@@ -1,3 +1,5 @@
+## 1.0.6
+    - space_parsers improved
 ## 1.0.5
     - Minor changes
 ## 1.0.4
