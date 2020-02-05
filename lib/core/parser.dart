@@ -188,6 +188,39 @@ abstract class Parser {
     }
   }
 
+  String replaceInMapped({
+    @required String input,
+    @required String Function(Success match) replace,
+    int start = 0,
+    int count,
+  }) {
+    var output = input;
+    if (replace == null) {
+      return output;
+    }
+    var offset = 0;
+    if ((start >= 0) && (start < output.length)) {
+      final results = allMatches(output, start);
+      if (results.isEmpty) {
+        return output;
+      }
+      var c = 0;
+      for (var result in results) {
+        final replacement = replace(result);
+        output = output.replaceRange(
+            result.start - offset, result.end - offset, replacement);
+        c++;
+        offset += (result.value.length - replacement.length);
+        if ((count != null) && (count == c)) {
+          break;
+        }
+      }
+      return output;
+    } else {
+      return output;
+    }
+  }
+
   bool hasMatch(String input, [int start = 0]) {
     return firstMatch(input, start).isSuccess;
   }
@@ -212,7 +245,7 @@ class SeqParser extends Parser {
       try {
         return parsers.elementAt(1).parse(buffer, position);
       } catch (e) {
-        return Failure(position, 'SeqParser: ${e.toString()}');
+        return Failure(position, e.toString());
       }
     }
 
@@ -226,7 +259,7 @@ class SeqParser extends Parser {
           return result;
         }
       } catch (e) {
-        return Failure(position, 'SeqParser: ${e.toString()}');
+        return Failure(position, e.toString());
       }
     }
 
@@ -250,7 +283,7 @@ class OrParser extends Parser {
         try {
           result = second.parse(context.buffer, context.position);
         } catch (e) {
-          result = Failure(context.position, 'OrParser: ${e.toString()}');
+          result = Failure(context.position, e.toString());
         }
       }
       return result;
@@ -258,7 +291,7 @@ class OrParser extends Parser {
       try {
         return second.parse(context.buffer, context.position);
       } catch (e) {
-        return Failure(context.position, 'OrParser: ${e.toString()}');
+        return Failure(context.position, e.toString());
       }
     }
   }
@@ -321,10 +354,10 @@ class PlusParser extends Parser {
       if (success) {
         return Success(start, end);
       } else {
-        return Failure(end, 'PlusParser: $message');
+        return Failure(end, message);
       }
     } catch (e) {
-      return Failure(context.position, 'PlusParser: ${e.toString()}');
+      return Failure(context.position, e.toString());
     }
   }
 }
@@ -391,7 +424,7 @@ class RepeatParser extends Parser {
     }
 
     if (firstLoopEndedWithFailure || (!success)) {
-      return Failure(start, 'RepeatParser: $message');
+      return Failure(start, message);
     } else {
       if ((max == null) || (max <= min)) {
         return Success(start, end);
