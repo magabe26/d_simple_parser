@@ -9,6 +9,14 @@ import 'package:d_simple_parser/d_simple_parser.dart';
 
 void main() {
   
+    print((char('a') | char('b')).seq(char('c')).firstStringMatch('abc')); // bc
+           // is the same as writing
+    print(char('a').or(char('b')).seq(char('c')).firstStringMatch('abc')); // bc
+           // is the same as writing
+    print(((char('a') | char('b')) & char('c')).firstStringMatch('abc')); // bc
+
+
+  
     print(char('a').seq(spaceOptional()).seq(char('b')).allStringMatches('ab a b a    b')); // [ab, a b, a    b]
   
     print(letter().seq(space()).seq(digit()).firstStringMatch('Yes!, I agree , year 2019 was not the best year for me.')); // r 2
