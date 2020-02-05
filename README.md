@@ -11,13 +11,13 @@ void main() {
   
     print(char('a').seq(spaceOptional()).seq(char('b')).allStringMatches('ab a b a    b')); // [ab, a b, a    b]
   
-    print(letter().seq(space()).seq(digit()).firstStringMatch('Yes!, I igree year 2019 was not the best year for me.')); // r 2
+    print(letter().seq(space()).seq(digit()).firstStringMatch('Yes!, I agree , year 2019 was not the best year for me.')); // r 2
     // is the same as writing
-    print(pattern('a-zA-Z').seq(char(' ').plus()).seq(pattern('0-9')).firstStringMatch('Yes!, I igree year 2019 was not the best year for me.'));// r 2
+    print(pattern('a-zA-Z').seq(char(' ').plus()).seq(pattern('0-9')).firstStringMatch('Yes!, I agree , year 2019 was not the best year for me.'));// r 2
     
-    print(letter().plus().seq(space()).seq(digit().plus()).firstStringMatch('Yes!, I igree year 2019 was not the best year for me.')); // year 2019
+    print(letter().plus().seq(space()).seq(digit().plus()).firstStringMatch('Yes!, I agree , year 2019 was not the best year for me.')); // year 2019
     // is the same as writing
-    print(pattern('a-zA-Z').plus().seq(char(' ').plus()).seq(pattern('0-9').plus()).firstStringMatch('Yes!, I igree year 2019 was not the best year for me.')); // year 2019
+    print(pattern('a-zA-Z').plus().seq(char(' ').plus()).seq(pattern('0-9').plus()).firstStringMatch('Yes!, I agree , year 2019 was not the best year for me.')); // year 2019
 
   
     //The almighty any(end,except) function
@@ -43,7 +43,7 @@ void main() {
 
     //replaceIn method
     print(char('b').replaceIn(input: 'bc', replacement: 'ab')); // abc
-        //replace multiple space with a single space
+        //replace multiple spaces with a single space
     print(space().replaceIn(input: 'I         am         Awesome!  ', replacement: ' ')); // I am Awesome!
 
     //replaceInMapped
