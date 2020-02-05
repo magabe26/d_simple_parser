@@ -46,6 +46,11 @@ void main() {
         //replace multiple space with a single space
     print(space().replaceIn(input: 'I         am         Awesome!  ', replacement: ' ')); // I am Awesome!
 
+    //replaceInMapped
+    print(letter().replaceInMapped(input: 'abc', replace: (match){
+      return match == 'b' ? 'B' : match;
+    })); //aBc
+ 
     //removeFrom method
     print(char('a').seq(char('b')).seq(char('c')).removeFrom('abcdefg')); // defg
 

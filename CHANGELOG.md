@@ -1,3 +1,5 @@
+## 1.0.4
+    - Added replaceInMapped method
 ## 1.0.3
     - Added more examples
 ## 1.0.2
