@@ -190,7 +190,7 @@ abstract class Parser {
 
   String replaceInMapped({
     @required String input,
-    @required String Function(Success match) replace,
+    @required String Function(String match) replace,
     int start = 0,
     int count,
   }) {
@@ -206,7 +206,7 @@ abstract class Parser {
       }
       var c = 0;
       for (var result in results) {
-        final replacement = replace(result);
+        final replacement = replace(result.value);
         output = output.replaceRange(
             result.start - offset, result.end - offset, replacement);
         c++;
