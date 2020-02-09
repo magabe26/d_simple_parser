@@ -12,16 +12,15 @@ class PatternParser extends Parser {
 
   @override
   Result parseOn(Context context) {
-    final buffer = context.buffer;
-    final position = context.position;
     if (pattern == null) {
-      return Failure(position);
+      return Failure(context.position);
     }
-    final match = RegExp('[$pattern]').matchAsPrefix(buffer, position);
+    final match =
+        RegExp('[$pattern]').matchAsPrefix(context.buffer, context.position);
     if (match != null) {
-      return Success(position, match.end);
+      return Success(context.position, match.end);
     } else {
-      return Failure(position);
+      return Failure(context.position);
     }
   }
 }

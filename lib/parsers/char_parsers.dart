@@ -10,38 +10,34 @@ import 'package:meta/meta.dart';
 import 'any_character_parser.dart';
 
 class CharParser extends Parser {
-  String _char;
+  int _codeUnit;
 
   CharParser(String char) {
-    _char = char[0];
+    _codeUnit = char.codeUnitAt(0);
   }
 
   @override
   Result parseOn(Context context) {
-    final buffer = context.buffer;
-    final position = context.position;
-    if (position < buffer.length) {
-      if (buffer[position] == _char) {
-        final start = position;
-        final end = start + _char.length;
+    if (context.position < context.buffer.length) {
+      if (context.buffer.codeUnitAt(context.position) == _codeUnit) {
+        final start = context.position;
+        final end = start + 1;
         return Success(start, end);
       } else {
-        return Failure(position);
+        return Failure(context.position);
       }
     }
-    return Failure(buffer.length);
+    return Failure(context.buffer.length);
   }
 }
 
 class _LastCharParserDelegate extends Parser {
   @override
   Result parseOn(Context context) {
-    final buffer = context.buffer;
-    final position = context.position;
-    if (position == buffer.length - 1) {
-      return Success(position, buffer.length);
+    if (context.position == context.buffer.length - 1) {
+      return Success(context.position, context.buffer.length);
     } else {
-      return Failure(position, 'Not the end of input');
+      return Failure(context.position, 'Not the end of input');
     }
   }
 }
@@ -56,11 +52,10 @@ class LastCharParser extends Parser {
 class FirstCharParser extends Parser {
   @override
   Result parseOn(Context context) {
-    final position = context.position;
-    if (position == 0) {
-      return Success(position, 1);
+    if (context.position == 0) {
+      return Success(context.position, 1);
     } else {
-      return Failure(position, 'Not the end of input');
+      return Failure(context.position, 'Not the end of input');
     }
   }
 }

@@ -227,43 +227,40 @@ abstract class Parser {
 }
 
 class SeqParser extends Parser {
-  List<Parser> parsers = <Parser>[];
+  final List<Parser> parsers;
 
   SeqParser(this.parsers);
 
   @override
   Result parseOn(Context context) {
-    final buffer = context.buffer;
-    final start = context.position;
-    var position = context.position;
-
-    if (parsers.isEmpty) {
+    if ((parsers == null) || parsers.isEmpty) {
       return Failure(context.position, 'SeqParser: No parsers to sequence!');
     }
 
     if (parsers.elementAt(0).runtimeType == SkipParser) {
       try {
-        return parsers.elementAt(1).parse(buffer, position);
+        return parsers.elementAt(1).parse(context.buffer, context.position);
       } catch (e) {
-        return Failure(position, e.toString());
+        return Failure(context.position, e.toString());
       }
     }
 
+    var currentPosition = context.position;
     for (var i = 0; i < parsers.length; i++) {
-      final parser = parsers.elementAt(i);
       try {
-        final result = parser.parse(buffer, position);
+        final result =
+            parsers.elementAt(i).parse(context.buffer, currentPosition);
         if (result.isSuccess) {
-          position = (result as Success).end;
+          currentPosition = (result as Success).end;
         } else {
           return result;
         }
       } catch (e) {
-        return Failure(position, e.toString());
+        return Failure(currentPosition, e.toString());
       }
     }
-
-    return Success(start, position).setValue(buffer.substring(start, position));
+    return Success(context.position, currentPosition)
+        .setValue(context.buffer.substring(context.position, currentPosition));
   }
 }
 
@@ -304,22 +301,21 @@ class StarParser extends Parser {
 
   @override
   Result parseOn(Context context) {
-    final start = context.position;
-    var end = context.position;
+    var currentPosition = context.position;
     var result;
     try {
-      result = parser.parse(context.buffer, end);
+      result = parser.parse(context.buffer, currentPosition);
       while (result.isSuccess) {
-        end = (result as Success).end;
+        currentPosition = (result as Success).end;
         try {
-          result = parser.parse(context.buffer, end);
+          result = parser.parse(context.buffer, currentPosition);
         } catch (_) {
           break;
         }
       }
-      return Success(start, end);
+      return Success(context.position, currentPosition);
     } catch (_) {
-      return Success(start, end);
+      return Success(context.position, currentPosition);
     }
   }
 }
@@ -331,30 +327,29 @@ class PlusParser extends Parser {
 
   @override
   Result parseOn(Context context) {
-    final start = context.position;
-    var end = context.position;
+    var currentPosition = context.position;
     var success = false;
     var result;
     try {
-      result = parser.parse(context.buffer, end);
+      result = parser.parse(context.buffer, currentPosition);
       var message = '';
       while (result.isSuccess) {
-        end = (result as Success).end;
+        currentPosition = (result as Success).end;
         if (!success) {
           success = true;
         }
         try {
-          result = parser.parse(context.buffer, end);
+          result = parser.parse(context.buffer, currentPosition);
         } catch (e) {
-          end = (result as Failure).position;
+          currentPosition = (result as Failure).position;
           message = e.toString();
           break;
         }
       }
       if (success) {
-        return Success(start, end);
+        return Success(context.position, currentPosition);
       } else {
-        return Failure(end, message);
+        return Failure(currentPosition, message);
       }
     } catch (e) {
       return Failure(context.position, e.toString());
@@ -369,18 +364,15 @@ class OptionalParser extends Parser {
 
   @override
   Result parseOn(Context context) {
-    final start = context.position;
-    var end = context.position;
-    var result;
     try {
-      result = parser.parse(context.buffer, end);
+      final result = parser.parse(context.buffer, context.position);
       if (result.isSuccess) {
-        return Success(start, (result as Success).end);
+        return Success(context.position, (result as Success).end);
       } else {
-        return Success(start, end);
+        return Success(context.position, context.position);
       }
     } catch (_) {
-      return Success(start, end);
+      return Success(context.position, context.position);
     }
   }
 }
@@ -396,18 +388,16 @@ class RepeatParser extends Parser {
 
   @override
   Result parseOn(Context context) {
-    final buffer = context.buffer;
-    final start = context.position;
-    var end = context.position;
     var firstLoopEndedWithFailure = false;
     var success = false;
     var message = '';
 
+    var currentPosition = context.position;
     for (var i = 0; i < min; i++) {
       try {
-        final result = parser.parse(buffer, end);
+        final result = parser.parse(context.buffer, currentPosition);
         if (result.isSuccess) {
-          end = (result as Success).end;
+          currentPosition = (result as Success).end;
           if (!success) {
             success = true;
           }
@@ -424,22 +414,22 @@ class RepeatParser extends Parser {
     }
 
     if (firstLoopEndedWithFailure || (!success)) {
-      return Failure(start, message);
+      return Failure(context.position, message);
     } else {
       if ((max == null) || (max <= min)) {
-        return Success(start, end);
+        return Success(context.position, currentPosition);
       } else {
         for (var i = 0; i < (max - min); i++) {
           try {
-            final result = parser.parse(buffer, end);
+            final result = parser.parse(context.buffer, currentPosition);
             if (result.isSuccess) {
-              end = (result as Success).end;
+              currentPosition = (result as Success).end;
             }
           } catch (_) {
             break;
           }
         }
-        return Success(start, end);
+        return Success(context.position, currentPosition);
       }
     }
   }
@@ -457,27 +447,25 @@ Parser debug() => DebugParser();
 
 ///Skips the result of the parser if the passed parser succeed
 class SkipParser extends Parser {
-  Parser parser;
+  final Parser parser;
 
   SkipParser(this.parser);
 
   @override
   Result parseOn(Context context) {
-    final buffer = context.buffer;
-    final position = context.position;
     if (parser != null) {
       try {
-        final result = parser.parse(buffer, position);
+        final result = parser.parse(context.buffer, context.position);
         if (result.isSuccess) {
           return Success((result as Success).end, (result as Success).end);
         } else {
-          return Success(position, position);
+          return Success(context.position, context.position);
         }
       } catch (_) {
-        return Success(position, position);
+        return Success(context.position, context.position);
       }
     } else {
-      return Success(position, position);
+      return Success(context.position, context.position);
     }
   }
 }

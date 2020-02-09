@@ -21,19 +21,20 @@ class StringParser extends Parser {
     if (string == null) {
       return Failure(context.position, 'Failed , the string is null');
     }
-    final buffer = context.buffer;
-    if (context.position < buffer.length) {
+
+    if (context.position < context.buffer.length) {
       if ((_failedAt != -1) && (context.position <= _failedAt)) {
         return Failure(context.position, 'Failed , No match found');
       }
-      final start = context.position;
-      var end = context.position;
 
+      var end = context.position;
       for (var i = 0; i < string.length; i++, end++) {
+        final charInBuffer = context.buffer[end];
+        final charInString = string[i];
         final match = caseSensitive
-            ? (string[i] == buffer[end])
-            : ((string[i].toLowerCase() == buffer[end]) ||
-                (string[i].toUpperCase() == buffer[end]));
+            ? (charInString == charInBuffer)
+            : ((charInString.toLowerCase() == charInBuffer) ||
+                (charInString.toUpperCase() == charInBuffer));
 
         if (!match) {
           _failedAt = end;
@@ -41,9 +42,9 @@ class StringParser extends Parser {
         }
       }
       _failedAt = -1;
-      return Success(start, end);
+      return Success(context.position, end);
     } else {
-      return Failure(buffer.length, 'Failed , No match found');
+      return Failure(context.buffer.length, 'Failed , No match found');
     }
   }
 }
