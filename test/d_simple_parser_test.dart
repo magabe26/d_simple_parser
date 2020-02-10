@@ -311,21 +311,21 @@ void main() {
 
     group('Text replacement tests | ', () {
       test(
-          "When orginal and replacement have equal length, A call to char('a').replaceIn(input: 'aa', replacement: '-') return '--'",
+          "When orginal and replacement have equal length, A call to char('a').replaceIn(input: 'ab a', replacement: '-') return '-b -'",
           () {
-        expect(char('a').replaceIn(input: 'aa', replacement: '-'), '--');
+        expect(char('a').replaceIn(input: 'ab a', replacement: '-'), '-b -');
       });
 
       test(
-          "When replacement has greater length, A call to char('a').replaceIn(input: 'aa', replacement: '--') return '----'",
+          "When replacement has greater length, A call to char('a').replaceIn(input: 'ab a', replacement: '--') return '--b --'",
           () {
-        expect(char('a').replaceIn(input: 'aa', replacement: '--'), '----');
+        expect(char('a').replaceIn(input: 'ab a', replacement: '--'), '--b --');
       });
 
       test(
-          "When replacement has smaller length, A call to char('a').replaceIn(input: 'aa', replacement: '') return empty string",
+          "When replacement has smaller length, A call to char('a').replaceIn(input: 'ab a', replacement: '') return 'b '",
           () {
-        expect(char('a').replaceIn(input: 'aa', replacement: ''), '');
+        expect(char('a').replaceIn(input: 'ab a', replacement: ''), 'b ');
       });
     });
   });
