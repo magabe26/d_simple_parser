@@ -165,27 +165,12 @@ abstract class Parser {
     int start = 0,
     int count,
   }) {
-    var output = input;
-    var offset = 0;
-    if ((start >= 0) && (start < output.length)) {
-      final results = allMatches(output, start);
-      if (results.isEmpty) {
-        return output;
-      }
-      var c = 0;
-      for (var result in results) {
-        output = output.replaceRange(
-            result.start - offset, result.end - offset, replacement);
-        c++;
-        offset += (result.value.length - replacement.length);
-        if ((count != null) && (count == c)) {
-          break;
-        }
-      }
-      return output;
-    } else {
-      return output;
-    }
+    return replaceInMapped(
+      input: input,
+      replace: (_) => replacement,
+      start: start,
+      count: count,
+    );
   }
 
   String replaceInMapped({
@@ -198,21 +183,25 @@ abstract class Parser {
     if (replace == null) {
       return output;
     }
-    var offset = 0;
+
     if ((start >= 0) && (start < output.length)) {
-      final results = allMatches(output, start);
-      if (results.isEmpty) {
+      final matches = allStringMatches(output, start);
+      if (matches.isEmpty) {
         return output;
       }
       var c = 0;
-      for (var result in results) {
-        final replacement = replace(result.value);
-        output = output.replaceRange(
-            result.start - offset, result.end - offset, replacement);
-        c++;
-        offset += (result.value.length - replacement.length);
-        if ((count != null) && (count == c)) {
-          break;
+      var pos = start;
+      for (var match in matches) {
+        final start = output.indexOf(match, pos);
+        if (start != -1) {
+          final end = start + match.length;
+          final replacement = replace(match);
+          output = output.replaceRange(start, end, replacement);
+          c++;
+          pos += replacement.length;
+          if ((count != null) && (count == c)) {
+            break;
+          }
         }
       }
       return output;

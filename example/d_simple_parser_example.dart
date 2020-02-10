@@ -7,6 +7,10 @@ import 'package:d_simple_parser/d_simple_parser.dart';
 
 void main() {
 
+
+  print(char('a').or(string('weso')).or(space()).replaceIn(input: 'I am awesome.', replacement: '---'));
+
+
   final input = '''<k>
            <tag attr1="attribute1"> Text </tag>
            <TAG> TEXT </TAG>
